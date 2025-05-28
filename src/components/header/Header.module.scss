@@ -1,0 +1,53 @@
+header {
+    background: #EEEFF2;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+        display: flex;
+        font-size: 1.5rem;
+        font-weight: bold;
+
+        a {
+            margin-right: 100px;
+        }
+    }
+
+    nav {
+        margin-left: 10px;
+        display: flex;
+        align-items: center;
+        gap: 50px;
+
+        a {
+            text-decoration: none;
+            color: #151635;
+            font-weight: 500;
+        }
+    }
+
+    .authButtons {
+        display: flex;
+        align-items: center;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+
+        .login {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #151635;
+            background: none;
+            text-decoration: none;
+        }
+    }
+}

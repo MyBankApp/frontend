@@ -1,0 +1,28 @@
+footer {
+    background-color: #151635;
+    color: #EEEFF2;
+    padding: 2rem 2%;
+
+    .content {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        .section {
+            .links {
+                display: flex;
+                flex-direction: column;
+            }
+
+            h3 {
+                margin-bottom: 1rem;
+            }
+
+            a {
+                color: #EEEFF2;
+                text-decoration: none;
+                margin-bottom: 0.5rem;
+            }
+        }
+    }
+}
