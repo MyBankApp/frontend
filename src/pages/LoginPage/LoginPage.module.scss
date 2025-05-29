@@ -1,0 +1,16 @@
+.content {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    padding: 48px;
+    max-width: 500px;
+    margin: 0 auto;
+
+    h2 {
+        margin-bottom: 30px;
+    }
+
+}
