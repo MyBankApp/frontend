@@ -7,6 +7,7 @@ import { step1Schema } from "../../types/schemas/Step1Schema"
 import { step2Schema } from "../../types/schemas/Step2Schema"
 import Step1form from "../../components/step1form/Step1form"
 import Step2form from "../../components/step2form/Step2form"
+import { userStore } from "../../store/UserStore"
 
 const LoginPage = () => {
     const [step, setStep] = useState<number>(1)
@@ -21,8 +22,13 @@ const LoginPage = () => {
             const isValid = await actions.validateForm()
             if (isValid) setStep(2)
         } else {
-            console.log('Отправка данных:', values)
+            const username = values.username
+            const password = values.password
+
+            await userStore.login(username, password)
             actions.setSubmitting(false)
+            
+            if (userStore.isAuthenticated) window.location.href = "/profile"
         }
     }
 
