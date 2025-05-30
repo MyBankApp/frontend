@@ -36,6 +36,7 @@
         box-sizing: border-box;
         border: none;
         background-color: #151635;
+        cursor: pointer;
 
         &:disabled {
             background: #ccc;

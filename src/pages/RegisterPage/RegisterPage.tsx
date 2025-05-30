@@ -3,8 +3,12 @@ import Layout from "../Layout"
 import type { RegisterFormValues } from "../../types/RegisterFormValues"
 import styles from './RegisterPage.module.scss'
 import { RegisterSchema } from "../../types/schemas/RegisterSchema"
+import { api } from "../../http"
+import { useState } from "react"
 
 const RegisterPage = () => {
+    const [successMessage, setSuccessMessage] = useState<string | null>(null);
+    const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
     const initialValues: RegisterFormValues = {
         email: '',
@@ -13,10 +17,26 @@ const RegisterPage = () => {
     }
 
     const handleSubmit = async (values: RegisterFormValues, actions: FormikHelpers<RegisterFormValues>) => {
-        const isValid = await actions.validateForm()
+        setErrorMessage(null);
+        setSuccessMessage(null);
 
-        if (isValid) {
-            console.log(values)
+        try {
+            const isValid = await actions.validateForm()
+
+            if (!isValid) return
+
+            await api.post("/auth/register", values)
+            setSuccessMessage("✅ Регистрация прошла успешно! Проверьте почту для активации аккаунта")
+        }
+
+        catch (error: any) {
+            const serverError = error.response?.data?.message
+            const networkError = error.message;
+            
+            setErrorMessage(serverError || networkError)
+        }
+
+        finally {
             actions.setSubmitting(false)
         }
     }
@@ -25,6 +45,9 @@ const RegisterPage = () => {
         <Layout>
             <div className={styles.content}>
                 <h2>Регистрация в FinBank</h2>
+
+                {successMessage && <div className={styles.successMessage}>{successMessage}</div>}
+                {errorMessage && <div className={styles.errorMessage}>{errorMessage}</div>}
 
                 <Formik
                     initialValues={initialValues}
