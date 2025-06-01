@@ -5,6 +5,9 @@ import { TransactionsApi } from '../../http/TransactionsApi'
 import { transactionStore } from '../../store/TransactionsStore'
 import Transaction from '../../components/transactions/Transaction'
 import { observer } from 'mobx-react-lite'
+import { AnalyticApi } from '../../http/AnalyticApi'
+import { analyticStore } from '../../store/AnalyticStore'
+import { PieChart } from '@mui/x-charts'
 
 const TransactionsPage = () => {
     const id = userStore.user?.id
@@ -16,9 +19,11 @@ const TransactionsPage = () => {
     useEffect(() => {
         if (!id) return;
         TransactionsApi.getAllByUserId(id).then(data => transactionStore.setTransactions(data))
+        AnalyticApi.getDataForPieChart(id).then(data => analyticStore.setDataForPieChart(data))
     }, [id]);
 
     const transactions = transactionStore.getTransactions()
+    const dataForPieChart = analyticStore.getDataForPieChart()
      
     return (
         <div className={styles.page}>
@@ -29,6 +34,9 @@ const TransactionsPage = () => {
                 : 
                 <div>
                     <h1 className={styles.text}>Транзакции</h1>
+                    <div className={styles.charts}>
+                        <PieChart series={[{ data: dataForPieChart }]} />
+                    </div>
                     {transactions.map((transaction) => <Transaction key={transaction.id} transaction={transaction} />)}
                 </div>
             }

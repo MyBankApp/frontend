@@ -7,7 +7,7 @@ const Footer = () => {
             <div className={styles.content}>
                 <div className={styles.section}>
                     <h3>FinBank</h3>
-                    <p>© 2024 Все права защищены</p>
+                    <p>© 2025 Все права защищены</p>
                 </div>
                 <div className={styles.section}>
                     <h3>Контакты</h3>

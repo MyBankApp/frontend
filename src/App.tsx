@@ -5,13 +5,15 @@ import { BrowserRouter } from 'react-router-dom'
 import AppContent from './AppContent'
 import { userStore } from './store/UserStore'
 import { transactionStore } from './store/TransactionsStore'
+import { analyticStore } from './store/AnalyticStore'
 
 export const Context = createContext<StoresType | null>(null)
 
 function App() {
   const [currentStore] = useState<StoresType>({
     userStore: userStore,
-    transactionStore: transactionStore
+    transactionStore: transactionStore,
+    analyticStore: analyticStore
   })
 
   return (

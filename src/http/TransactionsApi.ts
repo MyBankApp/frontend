@@ -4,11 +4,13 @@ import type { UpdateTransactionType } from "../types/UpdateTransactionType";
 
 export class TransactionsApi {
     static async getAll() {
-        return await api.get("/transactions")
+        const response = await api.get("/transactions")
+        return response.data
     }
 
     static async getById(id: number) {
-        return await api.get(`/transactions/${id}`)
+        const response = await api.get(`/transactions/${id}`)
+        return response.data
     }
 
     static async getAllByUserId(senderId: number) {
@@ -17,14 +19,17 @@ export class TransactionsApi {
     }
 
     static async create(transaction: CreateTransactionType) {
-        return await api.post("/transactions", transaction)
+        const response = await api.post("/transactions", transaction)
+        return response.data
     }
 
     static async update(updateTransaction: UpdateTransactionType) {
-        return await api.put("/transactions", updateTransaction)
+        const response = await api.put("/transactions", updateTransaction)
+        return response.data
     }
 
     static async delete(id: number) {
-        return await api.delete(`/transactions/${id}`)
+        const response = await api.delete(`/transactions/${id}`)
+        return response.data
     }
 }
