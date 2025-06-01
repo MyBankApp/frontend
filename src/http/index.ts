@@ -5,8 +5,8 @@ export const api = axios.create({
     baseURL: "http://localhost:8080/api/"
 })
 
-export const refreshApi = axios.create({
-    baseURL: "",
+export const analyticApi = axios.create({
+    baseURL: "http://localhost:8000/api/",
 })
 
 api.interceptors.request.use(config => {
@@ -26,7 +26,7 @@ api.interceptors.response.use(
             originalRequest._retry = true;
 
             try {
-                const { data } = await refreshApi.post("/auth/refresh", {
+                const { data } = await api.post("/auth/refresh", {
                     refreshToken: userStore.refreshToken
                 })
 
