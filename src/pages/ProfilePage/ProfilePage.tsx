@@ -59,7 +59,7 @@ const ProfilePage = () => {
           <ArrowRight size={20} className={styles.arrow} />
         </Link>
 
-        <Link to={'/'} className={styles.menuItem}>
+        <Link to={'/transfer'} className={styles.menuItem}>
           <div className={styles.menuIcon}>
             <Send size={20} />
           </div>

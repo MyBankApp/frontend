@@ -35,8 +35,12 @@
         width: 56px;
         box-sizing: border-box;
         border: none;
-        background-color: #151635;
+        background-color: #00346c;
         cursor: pointer;
+
+        &:hover {
+            background-color: #151635;
+        }
 
         &:disabled {
             background: #ccc;
