@@ -2,7 +2,7 @@ import Layout from "../Layout"
 import styles from './LoginPage.module.scss'
 import { useState } from "react"
 import { Form, Formik, type FormikHelpers } from "formik"
-import type { LoginFormValues } from "../../types/LoginFormValues"
+import type { LoginFormValues } from "../../types/formValues/LoginFormValues"
 import { step1Schema } from "../../types/schemas/Step1Schema"
 import { step2Schema } from "../../types/schemas/Step2Schema"
 import Step1form from "../../components/step1form/Step1form"

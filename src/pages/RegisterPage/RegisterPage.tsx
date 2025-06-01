@@ -1,6 +1,6 @@
 import { ErrorMessage, Field, Form, Formik, type FormikHelpers } from "formik"
 import Layout from "../Layout"
-import type { RegisterFormValues } from "../../types/RegisterFormValues"
+import type { RegisterFormValues } from "../../types/formValues/RegisterFormValues"
 import styles from './RegisterPage.module.scss'
 import { RegisterSchema } from "../../types/schemas/RegisterSchema"
 import { api } from "../../http"

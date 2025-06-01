@@ -1,5 +1,5 @@
 import type { FormikErrors, FormikTouched } from "formik"
-import type { LoginFormValues } from "../LoginFormValues"
+import type { LoginFormValues } from "../formValues/LoginFormValues"
 
 export interface Step1formProps {
     isSubmitting: boolean

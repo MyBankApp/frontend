@@ -18,4 +18,9 @@ export class UserApi {
     static async getCurrentUser() {
         return api.get<UserType>("/auth/me")
     }
+
+    static async getAll() {
+        const response = await api.get("/users")
+        return response.data
+    }
 }
