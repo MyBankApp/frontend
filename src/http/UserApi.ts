@@ -1,5 +1,6 @@
 import { api } from ".";
 import type { AuthResponse } from "../types/response/AuthResponse";
+import type { UpdateUserType } from "../types/UpdateUserType";
 import type { UserType } from "../types/UserType";
 
 export class UserApi {
@@ -21,6 +22,11 @@ export class UserApi {
 
     static async getAll() {
         const response = await api.get("/users")
+        return response.data
+    }
+
+    static async update(updateUserDto: UpdateUserType) {
+        const response = await api.put("/users", updateUserDto)
         return response.data
     }
 }

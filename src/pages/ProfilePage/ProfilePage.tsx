@@ -3,7 +3,7 @@ import { userStore } from "../../store/UserStore"
 import styles from './ProfilePage.module.scss'
 import { observer } from "mobx-react-lite"
 import { Link, useNavigate } from "react-router-dom"
-import { ArrowRight, CreditCard, Send } from "lucide-react"
+import { ArrowRight, CreditCard, RussianRuble, Send } from "lucide-react"
 
 const ProfilePage = () => {
   const navigation = useNavigate()
@@ -64,6 +64,14 @@ const ProfilePage = () => {
             <Send size={20} />
           </div>
           <span>Перевод средств</span>
+          <ArrowRight size={20} className={styles.arrow} />
+        </Link>
+
+        <Link to={'/deposit'} className={styles.menuItem}>
+          <div className={styles.menuIcon}>
+            <RussianRuble size={20} />
+          </div>
+          <span>Вклады</span>
           <ArrowRight size={20} className={styles.arrow} />
         </Link>
       </div>

@@ -7,6 +7,7 @@ import { userStore } from './store/UserStore'
 import { transactionStore } from './store/TransactionsStore'
 import { analyticStore } from './store/AnalyticStore'
 import { categoryStore } from './store/CategoryStore'
+import { depositProductStore } from './store/DepositProductStore'
 
 export const Context = createContext<StoresType | null>(null)
 
@@ -15,8 +16,8 @@ function App() {
     userStore: userStore,
     transactionStore: transactionStore,
     analyticStore: analyticStore,
-    categoryStore: categoryStore
-
+    categoryStore: categoryStore,
+    depositProductStore: depositProductStore
   })
 
   return (
