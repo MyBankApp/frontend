@@ -1,0 +1,150 @@
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 auto;
+    padding-top: 90px;
+    background-color: #EEEFF2;
+    min-height: calc(100vh - 90px);
+}
+
+.content {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+}
+
+.notAuth {
+    text-align: center;
+    font-size: 18px;
+    color: #ff4d4f;
+    padding: 40px 20px;
+}
+
+.depositCard {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    color: #1E1E1E;
+}
+
+.title {
+    text-align: center;
+    margin: 0 0 25px 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: #1890ff;
+}
+
+.productInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 25px;
+}
+
+.productName {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.interestRate {
+    background: #1890ff;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.amountContainer {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.amountLabel {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.amount {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1E1E1E;
+}
+
+.dates {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.dateItem {
+    display: flex;
+    flex-direction: column;
+
+    span:first-child {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 6px;
+    }
+
+    span:last-child {
+        font-size: 16px;
+        font-weight: 500;
+    }
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.detailItem {
+    display: flex;
+    flex-direction: column;
+
+    span:first-child {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 6px;
+    }
+
+    span:last-child {
+        font-size: 16px;
+        font-weight: 500;
+    }
+}
+
+.loading,
+.error,
+.noDeposit {
+    text-align: center;
+    background: white;
+    padding: 40px 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    font-size: 18px;
+}
+
+.error {
+    color: #ff4d4f;
+}
+
+.noDeposit {
+    h3 {
+        color: #1890ff;
+        margin-bottom: 15px;
+    }
+
+    p {
+        color: #666;
+        font-size: 16px;
+    }
+}
